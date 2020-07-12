@@ -6,8 +6,6 @@ budget_csv = os.path.join('Resources', 'budget_data.csv')
 months = []
 revenue = []
 revenue_change = []
-month_max = []
-month_min = []
 
 with open(budget_csv, newline='') as csvfile:
     
