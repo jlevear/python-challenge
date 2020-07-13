@@ -24,6 +24,7 @@ with open(budget_csv, newline='') as csvfile:
         
         # add the month values to the months list
         months.append(row[0])
+
         # add the revenues to the revenue list as integers
         revenue.append(int(row[1]))
 
@@ -60,7 +61,7 @@ with open(budget_csv, newline='') as csvfile:
     # print the minimum value in the revenue_change list and the corresponding index from the months list
     print("Greatest Decrease in Profits: " + str(months[min_index + 1]) + " ($" + str(min(revenue_change)) + ")")
 
-#create a variable for the text file path
+# create a variable for the text file path
 file_path = os.path.join('analysis', 'main.txt')
 
 # open the text file

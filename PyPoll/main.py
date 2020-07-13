@@ -8,7 +8,7 @@ election_csv = os.path.join('Resources', 'election_data.csv')
 # create empty list for candidate variable 
 candidate = []
 
-# create list of candidates from results of set(candidate)
+# create list of candidates from results of print(set(candidate)) on line 31
 candidate_list = ["Khan", "Correy", "Li", "O'Tooley"]
 
 # open the csv file
@@ -28,10 +28,9 @@ with open(election_csv, newline='') as csvfile:
     total_votes = len(candidate) 
 
     # find the candidate choices
-    candidate_set = set(candidate)
-    # print(candidate_set)
+    # print(set(candidate))
 
-    # calculate the percentage and count of votes for each candidate
+    # calculate the count and percentage of votes for each candidate
     candidate1_votes = candidate.count(candidate_list[0])
     candidate1_percent = round(candidate1_votes / total_votes * 100)
 
@@ -61,7 +60,7 @@ print("-------------------------")
 print(f"Winner: {winner}")
 print("-------------------------")
 
-#create a variable for the text file path
+# create a variable for the text file path
 file_path = os.path.join('analysis', 'main.txt')
 
 # open the text file
