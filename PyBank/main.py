@@ -59,3 +59,21 @@ with open(budget_csv, newline='') as csvfile:
 
     # print the minimum value in the revenue_change list and the corresponding index from the months list
     print("Greatest Decrease in Profits: " + str(months[min_index + 1]) + " ($" + str(min(revenue_change)) + ")")
+
+file_path = os.path.join('analysis', 'main.txt')
+
+file1 = open(file_path, "w")
+
+L = ["Financial Analysis \n",
+"----------------------------- \n",
+"Total Months: " + str(len(months)) + "\n", 
+"Total: $ " + str(sum(revenue)) + "\n",
+"Average Change: $" + str(round(sum(revenue_change)/len(revenue_change),2)) + "\n",
+"Greatest Increase in Profits: " + str(months[max_index + 1]) + " ($" + str(max(revenue_change)) + ")" + "\n",
+"Greatest Decrease in Profits: " + str(months[min_index + 1]) + " ($" + str(min(revenue_change)) + ")" + "\n"]
+
+
+file1.writelines(L)
+
+
+
