@@ -44,7 +44,7 @@ with open(budget_csv, newline='') as csvfile:
         revenue_change.append(revenue[i+1] - revenue[i])
     
         # find the month corresponding to the max and min values of the revenue_change list
-        # (https://stackoverflow.com/questions/6193498/pythonic-way-to-find-maximum-value-and-its-index-in-a-list)
+        # used user Escualo's code at url :(https://stackoverflow.com/questions/6193498/pythonic-way-to-find-maximum-value-and-its-index-in-a-list)
         max_value = max(revenue_change)
         max_index = revenue_change.index(max_value)
 
@@ -70,11 +70,11 @@ file1 = open(file_path, "w")
 # (https://www.geeksforgeeks.org/reading-writing-text-files-python/)
 L = ["Financial Analysis \n",
 "----------------------------- \n",
-"Total Months: " + str(len(months)) + "\n", 
-"Total: $ " + str(sum(revenue)) + "\n",
-"Average Change: $" + str(round(sum(revenue_change)/len(revenue_change),2)) + "\n",
-"Greatest Increase in Profits: " + str(months[max_index + 1]) + " ($" + str(max(revenue_change)) + ")" + "\n",
-"Greatest Decrease in Profits: " + str(months[min_index + 1]) + " ($" + str(min(revenue_change)) + ")" + "\n"]
+f"Total Months: {str(len(months))} \n", 
+f"Total: $ {str(sum(revenue))} \n",
+f"Average Change: ${str(round(sum(revenue_change)/len(revenue_change),2))} \n",
+f"Greatest Increase in Profits: {str(months[max_index + 1])} (${str(max(revenue_change))}) \n",
+f"Greatest Decrease in Profits: {str(months[min_index + 1])} (${str(min(revenue_change))}) \n"]
 
 file1.writelines(L)
 

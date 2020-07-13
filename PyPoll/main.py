@@ -6,7 +6,6 @@ import csv
 election_csv = os.path.join('Resources', 'election_data.csv')
 
 # create empty lists for each variable 
-voter_id = []
 candidate = []
 
 # create list of candidates from line 34
@@ -23,11 +22,10 @@ with open(election_csv, newline='') as csvfile:
 
     # create a loop for each row
     for row in csvreader:
-        voter_id.append(row[0])
         candidate.append(row[2])
 
     # calculate the total votes
-    total_votes = len(voter_id) 
+    total_votes = len(candidate) 
 
     # find the candidate choices
     candidate_set = set(candidate)
@@ -47,7 +45,7 @@ with open(election_csv, newline='') as csvfile:
     candidate4_percent = round(candidate4_votes / total_votes * 100)
 
     # determine the winning candidate
-    # https://stackoverflow.com/questions/1518522/find-the-most-common-element-in-a-list
+    # modified user newacct's code at url: https://stackoverflow.com/questions/1518522/find-the-most-common-element-in-a-list
     winner = max(set(candidate), key=candidate.count)
 
 # print the results
