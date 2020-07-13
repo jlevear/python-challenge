@@ -60,10 +60,14 @@ with open(budget_csv, newline='') as csvfile:
     # print the minimum value in the revenue_change list and the corresponding index from the months list
     print("Greatest Decrease in Profits: " + str(months[min_index + 1]) + " ($" + str(min(revenue_change)) + ")")
 
+#create a variable for the text file path
 file_path = os.path.join('analysis', 'main.txt')
 
+# open the text file
 file1 = open(file_path, "w")
 
+# write to the text file
+# (https://www.geeksforgeeks.org/reading-writing-text-files-python/)
 L = ["Financial Analysis \n",
 "----------------------------- \n",
 "Total Months: " + str(len(months)) + "\n", 
@@ -71,7 +75,6 @@ L = ["Financial Analysis \n",
 "Average Change: $" + str(round(sum(revenue_change)/len(revenue_change),2)) + "\n",
 "Greatest Increase in Profits: " + str(months[max_index + 1]) + " ($" + str(max(revenue_change)) + ")" + "\n",
 "Greatest Decrease in Profits: " + str(months[min_index + 1]) + " ($" + str(min(revenue_change)) + ")" + "\n"]
-
 
 file1.writelines(L)
 
