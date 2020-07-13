@@ -5,10 +5,10 @@ import csv
 # create variable for filepath of election csv data
 election_csv = os.path.join('Resources', 'election_data.csv')
 
-# create empty lists for each variable 
+# create empty list for candidate variable 
 candidate = []
 
-# create list of candidates from line 34
+# create list of candidates from results of set(candidate)
 candidate_list = ["Khan", "Correy", "Li", "O'Tooley"]
 
 # open the csv file
